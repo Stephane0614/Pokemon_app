@@ -4,10 +4,7 @@ import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
-  template: `<h1>LIST DE POKEMON</h1>
-      
-    <router-outlet></router-outlet>
-  `
+  templateUrl:'app.component.html'
   
 })
 export class AppComponent implements OnInit{
@@ -16,7 +13,7 @@ export class AppComponent implements OnInit{
   ngOnInit() {
 
     console.table(this.pokemonList);
-    this.selectpokemon(this.pokemonList[6])
+    this.selectpokemon(this.pokemonList[0])
 
   }
   selectpokemon(pokemon: Pokemon)
