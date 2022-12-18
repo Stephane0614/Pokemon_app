@@ -1,0 +1,35 @@
+<!-- ".enter sur Keyup est un pseudo evenement Angular permet executé l'evenement sur le boutonn "enter" " -->
+<!-- <img src={{ pokemonSlected?.picture }} alt="photo du pokemon" /> -->
+
+<!-- <p *ngIf="pokemonSlected">
+    Vous avez selectionné le pokmeon: {{ pokemonSlected?.name }}
+</p>
+
+<p *ngIf="!pokemonSlected">Selectionnez un pokemon par son chiffre</p>
+
+<input #input (keyup.enter)="selectPokemon(input.value)" type="number" /> -->
+
+
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
+            <div (click)="goToPokemon(pokemon)" class="card horizontal" pkmnBorderCard >
+                <div class="card-image"  >
+                    <img [src]="pokemon.picture" alt="image de pokemon"  />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ pokemon.id }}</p>
+                        <p>{{ pokemon.name }}</p>
+                        <p><small>{{ pokemon.created | date:"dd/mm/yyy" }}</small></p>
+                        <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor}}">
+                            {{type}}
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
